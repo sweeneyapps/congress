@@ -12,7 +12,7 @@ app.get('/', function (req, res) {
 
 
 // I will refactor this code soon.
-app.get('/govTrack', (request, response) => {
+app.get('/senate', (request, response) => {
   govTrack.findRole({ current: true, limit:600, role_type: "senator", sort:"person" }, (err, res) => {
       var body = "";
       var heading =  "<h2>United States Senate</h2><hr>";
