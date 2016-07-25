@@ -14,9 +14,8 @@ app.get('/', function (req, res) {
 // I will refactor this code soon.
 app.get('/senate', (request, response) => {
   govTrack.findRole({ current: true, limit:600, role_type: "senator", sort:"person" }, (err, res) => {
-      var body = "";
-      var heading =  "<h2>United States Senate</h2><hr>";
       var count = {};
+      var names = []
 
       for (var i = 0; i < res.objects.length; i++) {
           if (count[res.objects[i].party]) {
@@ -25,16 +24,10 @@ app.get('/senate', (request, response) => {
              count[res.objects[i].party] = 1;
           }
         
-        var name = res.objects[i].person.name;
-        body += `<p> ${name} </p>`;        
+        names.push(res.objects[i].person.name);    
       }
-      
-      var howMany = "";
-      for (party in count) { howMany += `${party}:${count[party]} / `; }
-      howMany += "<hr>";
-      var html = `${heading} ${howMany} ${body}`;
-      response.send(html);
-
+  
+      response.render('senate', {names, count});
   });
 });
 
