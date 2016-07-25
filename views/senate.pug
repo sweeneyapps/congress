@@ -1,0 +1,12 @@
+doctype html
+html
+  head
+    title Senate
+  body
+    h1 United States Senate
+    hr
+    each val, index in count
+      span= index + ': #{val} / '
+    hr
+    each val in names
+      p= val
