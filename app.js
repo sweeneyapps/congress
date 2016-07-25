@@ -3,6 +3,7 @@ var govTrack = require('govtrack-node');
 
 var app = express();
 
+app.set('port', (process.env.PORT || 3000)); // heroku
 app.set('view engine', 'pug'); // using Jade
 app.set('views', './views');
 
@@ -32,6 +33,6 @@ app.get('/senate', (request, response) => {
 });
 
 
-app.listen(80, function () {
-  console.log('Example app listening on port 3000!');
+app.listen(app.get('port'), function () {
+  console.log('senate app is running on port', app.get('port'));
 });
