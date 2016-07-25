@@ -7,7 +7,7 @@ app.set('view engine', 'pug'); // using Jade
 app.set('views', './views');
 
 app.get('/', function (req, res) {
-  res.render('index', { title: 'Congress', message: 'Welcome to Congress\'s page'});
+  res.render('index', { title: 'Congress', message: 'Welcome to Congress\' page'});
 });
 
 
