@@ -3,10 +3,15 @@ var govTrack = require('govtrack-node');
 
 var app = express();
 
+app.set('view engine', 'pug'); // using Jade
+app.set('views', './views');
+
 app.get('/', function (req, res) {
-  res.send('Hello World!');
+  res.render('index', { title: 'Congress', message: 'Welcome to Congress\'s page'});
 });
 
+
+// I will refactor this code soon.
 app.get('/govTrack', (request, response) => {
     govTrack.findRole({ current: true, limit:600, role_type: "senator", sort:"person" }, (err, res) => {
 
