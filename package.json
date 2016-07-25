@@ -5,7 +5,8 @@
   "main": "app.js",
   "dependencies": {
     "express": "^4.14.0",
-    "govtrack-node": "^0.2.0"
+    "govtrack-node": "^0.2.0",
+    "pug": "^2.0.0-beta4"
   },
   "devDependencies": {},
   "scripts": {
