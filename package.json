@@ -3,7 +3,7 @@
   "version": "1.0.1",
   "description": "nodejs project on trackGov API",
   "engines": {
-    "node": "5.9.1"
+    "node": "6.11.1"
   },
   "main": "app.js",
   "dependencies": {
